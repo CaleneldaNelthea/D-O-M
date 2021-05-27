@@ -1,0 +1,27 @@
+﻿body {
+    background-color: lightgray;
+    color: gray;
+    font-family: Cambria;
+}
+
+#cartoon {
+    border: 21px solid gray;
+    display:block;
+}
+
+img {
+    background-color:lightgray;
+    float: left;
+}
+
+img:nth-child(2) {
+    clear: left;
+}
+
+p {
+    display: inline;
+    position: absolute;
+    top: 560px;
+    left: 530px;
+    font-weight: bold;
+}

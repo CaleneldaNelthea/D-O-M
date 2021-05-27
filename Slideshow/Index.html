@@ -1,0 +1,66 @@
+﻿<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <link href="StyleSheet1.css" rel="stylesheet" />
+    <script type="text/javascript">
+        var cartoons = ["rabbit-0.jpg", "rabbit-1.jpg", "rabbit-2.jpg", "rabbit-3.jpg",
+            "rabbit-4.jpg", "rabbit-5.jpg", "rabbit-6.jpg", "rabbit-7.jpg",
+            "rabbit-8.jpg", "rabbit-9.jpg", "rabbit-10.jpg", "rabbit-11.jpg",
+            "rabbit-12.jpg", "rabbit-13.jpg", "rabbit-14.jpg", "rabbit-15.jpg",
+            "rabbit-16.jpg", "rabbit-17.jpg", "rabbit-18.jpg", "rabbit-19.jpg"
+        ];
+        var index = 0;
+        var interval;
+        var text = "of 20"
+
+        function Previous() {
+            if (index == 0) {
+                index = cartoons.length - 1;
+            } else {
+                index -= 1;
+            }
+            document.getElementById("cartoon").src = cartoons[index];
+            document.getElementById("label").innerHTML = (index + 1) + text;
+        }
+
+        function Next() {
+            if (index == 19) {
+                index = 0;
+            } else {
+                index += 1;
+            }
+            document.getElementById("cartoon").src = cartoons[index];
+            document.getElementById("label").innerHTML = (index + 1) + text;
+        }
+
+        function Forward() {
+            interval = setInterval(Next, 5000);
+        }
+
+        function Stop() {
+            clearInterval(interval);
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <h1>De zelfmoordrabbittjes</h1>
+    <section>
+        <img src="rabbit-0.jpg" id="cartoon" />
+        <img onclick="Previous()" src="Previous.png" />
+        <img onclick="Next()" src="Volgend.png" />
+        <img onclick="Forward()" src="Forward.png" />
+        <img onclick="Stop();" src="Stop.png" />
+        <p id="label">1 of 20</p>
+    </section>
+</body>
+
+</html>
